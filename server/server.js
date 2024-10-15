@@ -33,10 +33,6 @@ const clientBuildPath = path.join(__dirname, "../client/build");
 console.log(clientBuildPath);
 app.use(express.static(clientBuildPath));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(clientBuildPath, "index.html"));
-// });
-
 connectDB();
 
 // const connectDB = require("./config/db");
