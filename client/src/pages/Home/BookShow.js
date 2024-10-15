@@ -149,7 +149,7 @@ const BookShow = () => {
   };
   return (
     <>
-      {loading && <Loader />}
+      {/* {loading && <Loader />} */}
       {show && (
         <Row gutter={24}>
           <Col span={24}>
