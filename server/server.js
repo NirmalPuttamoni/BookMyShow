@@ -13,11 +13,13 @@ const bookingRouter = require("./routes/bookingRouter");
 const port = process.env.PORT;
 const app = express();
 
-app.use(cors({
+app.use(
+  cors({
     origin: "*",
     methods: ["*"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}))
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 app.use(express.json());
 // require("dotenv").config(); // load env variables into process.env
@@ -53,6 +55,11 @@ app.use("/api/movies", movieRouter);
 app.use("/api/theatres", theatreRouter);
 app.use("/api/shows", showRouter);
 app.use("/api/bookings", bookingRouter);
+
+// Catch-all route to serve index.html for any other route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(clientBuildPath, "index.html"));
+});
 
 app.listen(port, () => {
   console.log("Server started at port :", port);
