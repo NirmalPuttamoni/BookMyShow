@@ -27,7 +27,7 @@ const Home = () => {
       }
       setTimeout(() => {
         dispatch(imageLoader(false));
-      }, 1500);
+      }, 1000);
     } catch (error) {
       console.log(error);
       message.error(error.message);
