@@ -151,7 +151,7 @@ const BookShow = () => {
     <>
       {/* {loading && <Loader />} */}
       {show && (
-        <Row gutter={24}>
+        <Row>
           <Col span={24}>
             <Card
               title={
@@ -164,7 +164,7 @@ const BookShow = () => {
               }
               extra={
                 <div className="show-name py-3">
-                  <h3>Show Name: {show?.name}</h3>
+                  <h3><span>Show Name: </span>{show?.name}</h3>
                   <h3>
                     <span>Date & Time: </span>
                     {moment(show?.date).format("MMM Do YYYY")}, {show?.time}
